@@ -6,29 +6,55 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 
 
+
 const programs = () => {
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [phone, setPhone] = useState('+91 ')
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [errors, setErrors] = useState({});
+  const [image, setImage] = useState(null);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    const validationErrors = {};
-    
-    if (!email) validationErrors.email = 'Email is required';
-    if (!password) validationErrors.password = 'Password is required';
-  
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-    } else {
-      setErrors({});
+  const handlePhoneChange = (e) => {
+    const value = e.target.value;
+    if (value.startsWith('+91')) {
+      const number = value.slice(3).replace(/\D/g, '');
+      if (number.length <= 10) {
+        setPhone(`+91 ${number}`);
+      }
     }
-  };
+  }
+
+    const handleEmailChange = (e) => {
+      const value = e.target.value;
+      setEmail(value);
+
+      // Simple email validation (name@example.com)
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (emailPattern.test(value)) {
+        setError(''); // Clear error if valid
+      } else {
+        setError('Invalid email format. Please use name@example.com');
+      }
+    };
+
+    const handleImageChange = (e) => {
+      const file = e.target.files[0];
+  
+      if (file) {
+        // Check file size (400 KB)
+        if (file.size > 400 * 1024) {
+          setError('File size exceeds 400 KB. Please choose a smaller image.');
+          setImage(null); // Clear previous image
+        } else {
+          setError(''); // Clear error if valid
+          setImage(file); // Set the file
+        }
+      }
+    };
+
 
   return (
     <div className='programs'>
@@ -52,34 +78,59 @@ const programs = () => {
       <button className="my-custom-button" onClick={handleShow}>
       </button>
 
-      <Modal show={show} onHide={handleClose} dialogClassName="modal-dialog-centered">
+      <Modal
+        show={show}
+        onHide={handleClose}
+        dialogClassName="modal-dialog-centered"
+      >
         <Modal.Header closeButton>
-          <Modal.Title>Form Title</Modal.Title>
+          <Modal.Title>Enter Your Details!</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
+          <Form>
+            <Form.Group className="mb-3">
+              <Form.Label>Name</Form.Label>
+              <Form.Control type="name" placeholder="as per documents" />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Mobile</Form.Label>
+              <Form.Control
+                type="text"
+                value={phone}
+                placeholder="+91 10-digit mobile number"
+                inputMode="numeric"
+                onChange={handlePhoneChange}
+              />
+            </Form.Group>
+            <Form.Group className='mb-3'>
+            <Form.Label>Email</Form.Label>
               <Form.Control
                 type="email"
-                placeholder="Enter email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                placeholder="name@example.com"
+                onChange={handleEmailChange}
+                // isInvalid={!!error}
               />
-              {errors.email && <p className="text-danger">{errors.email}</p>}
             </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>Photo</Form.Label>
               <Form.Control
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              {errors.password && <p className="text-danger">{errors.password}</p>}
-            </Form.Group>
+                type="file"
+                accept='image/*'
+                onChange={handleImageChange}
 
+                // isInvalid={!!error}
+              />
+              {image && (
+                <div style={{ marginTop: '10px' }}>
+                  <p>Uploaded Image:</p>
+                  <img
+                    src={URL.createObjectURL(image)}
+                    alt="Uploaded preview"
+                    style={{ maxWidth: '100%', maxHeight: '200px' }}
+                  />
+                </div>
+              )}
           </Form>
         </Modal.Body>
         <Modal.Footer>
@@ -87,8 +138,6 @@ const programs = () => {
         <button className='form-btn' onClick={handleClose}>Submit Now</button>
         </Modal.Footer>
       </Modal>
-
-
     </div>
       </div>
   )

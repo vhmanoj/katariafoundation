@@ -51,10 +51,10 @@ a{
   justify-content: center;
 }
 .form-btn{
-  background: #000000;
+  background: #212ea0;
   color: white;
-  padding: 14px 25px;
-  font-size: 16px;
+  padding: 10px 20px;
+  font-size: 14px;
   border-radius: 30px;
   cursor: pointer;
   border: 0;
