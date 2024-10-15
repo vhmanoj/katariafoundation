@@ -13,6 +13,7 @@ const App = () => {
       <Navbar/>
       <Hero/>
       <Programs/>
+      <About/>
       <div className='container'>
         <Title subTitle='Contact Us' title='Get in Touch'/>
       <Contact/>

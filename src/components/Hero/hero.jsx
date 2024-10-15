@@ -10,8 +10,8 @@ const hero = () => {
         <h1>Quality Education for every child!</h1>
         <p>
         We understand that education is the cornerstone of a prosperous and equitable society. That's why we go beyond just providing access to classrooms
-        </p>
-        <Link to='about' smooth={true} offset={-100} duration={500}><button className='btn'>Explore More <img src={dark_arrow} alt="" /></button></Link>
+        </p>  
+        <Link to='about' smooth={true} offset={-100} duration={500}><button className='btn'>Explore More <img src={dark_arrow} /></button></Link>
       </div>
     </div>
   )
