@@ -1,6 +1,6 @@
 .wa-btn {
     position: fixed;
-    top: 500px;
+    top: 220px;
     right: 10px;
     background-color: #25D366;
     color: white;
@@ -24,7 +24,7 @@
 @media (max-width: 1200px) {
     .wa-btn {
         position: fixed;
-        top: 1080px;
+        top: 950px;
         right: 10px;
         background-color: #25D366;
         color: white;
@@ -37,10 +37,28 @@
         z-index: 1000;
     }
 }
-@media (max-width: 600px) {
+
+@media (max-width: 700px) {
     .wa-btn {
         position: fixed;
-        top: 850px;
+        top: 955px;
+        right: 10px;
+        background-color: #25D366;
+        color: white;
+        padding: 15px;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        font-size: 14px;
+        z-index: 1000;
+    }
+}
+
+@media (max-width: 1800px) {
+    .wa-btn {
+        position: fixed;
+        top: 955px;
         right: 10px;
         background-color: #25D366;
         color: white;
