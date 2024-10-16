@@ -1,7 +1,7 @@
 import React from 'react'
 import './Wabutton.css'
 
-const Wabutton = () => {
+const Wbutton = () => {
   return (
     <div>
         <a href="https://wa.me/918384085829?text=Hello%20I%20would%20like%20to%20inquire%20about%20your%20services" target="_blank">
@@ -11,4 +11,4 @@ const Wabutton = () => {
   )
 }
 
-export default Wabutton
+export default Wbutton
