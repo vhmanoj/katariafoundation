@@ -6,13 +6,13 @@ import Contact from './components/Contact/contact'
 import Title from './components/Title/title'
 import Footer from './components/Footer/footer'
 import Programs from './components/Programs/programs'
-import Wbutton from './components/WPButton/Wbutton'
+// import Wbutton from './components/WPButton/Wbutton'
 
 const App = () => {
   return (
     <div>
       <Navbar/>
-      <Wbutton/>
+      {/* <Wbutton/> */}
       <Hero/>
       <Programs/>
       <About/>
