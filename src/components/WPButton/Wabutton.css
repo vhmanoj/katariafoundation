@@ -1,8 +1,8 @@
 .wa-btn {
     position: fixed;
-    top: 220px;
-    right: 10px;
-    background-color: #25D366;
+    bottom: 20px; 
+    right: 20px; 
+    background-color: #00008a;
     color: white;
     padding: 15px;
     border-radius: 50px;
@@ -14,60 +14,15 @@
 }
 
 .wa-btn:hover {
-    background-color: #00008a;
+    background-color: #000d4d;
 }
 
 .wa-btn i {
     margin-right: 8px;
 }
-
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
     .wa-btn {
-        position: fixed;
-        top: 950px;
-        right: 10px;
-        background-color: #25D366;
-        color: white;
-        padding: 15px;
-        border-radius: 50px;
-        border: none;
-        cursor: pointer;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        font-size: 16px;
-        z-index: 1000;
-    }
-}
-
-@media (max-width: 700px) {
-    .wa-btn {
-        position: fixed;
-        top: 955px;
-        right: 10px;
-        background-color: #25D366;
-        color: white;
-        padding: 15px;
-        border-radius: 50px;
-        border: none;
-        cursor: pointer;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        padding: 10px;
         font-size: 14px;
-        z-index: 1000;
-    }
-}
-
-@media (max-width: 1800px) {
-    .wa-btn {
-        position: fixed;
-        top: 955px;
-        right: 10px;
-        background-color: #25D366;
-        color: white;
-        padding: 15px;
-        border-radius: 50px;
-        border: none;
-        cursor: pointer;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        font-size: 14px;
-        z-index: 1000;
     }
 }
