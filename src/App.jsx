@@ -6,11 +6,13 @@ import Contact from './components/Contact/contact'
 import Title from './components/Title/title'
 import Footer from './components/Footer/footer'
 import Programs from './components/Programs/programs'
+import Wabutton from './components/WAButton/wabutton'
 
 const App = () => {
   return (
     <div>
       <Navbar/>
+      <Wabutton/>
       <Hero/>
       <Programs/>
       <About/>

@@ -11,6 +11,7 @@ const contact = () => {
 
     const [result, setResult] = React.useState("");
 
+
     const onSubmit = async (event) => {
       event.preventDefault();
       setResult("Sending....");
@@ -34,6 +35,16 @@ const contact = () => {
       }
     };
 
+    const handlePhoneChange = (e) => {
+      const value = e.target.value;
+      if (value.startsWith('+91')) {
+        const number = value.slice(3).replace(/\D/g, '');
+        if (number.length <= 10) {
+          setPhone(`+91 ${number}`);
+        }
+      }
+    }
+
   return (
     <div className='contact'>
       <div className='contact-col'>
@@ -52,7 +63,7 @@ const contact = () => {
             <input type="text" name='name' placeholder='Enter your name'
             required />
             <label>Phone Number</label>
-            <input type="tel" name='phone' placeholder='Enter your mobile number' required />
+            <input type="tel" name='phone' placeholder='Enter your mobile number' required onChange={handlePhoneChange}/>
             <label>Write your message here</label>
             <textarea name="message" rows={6} placeholder='Enter your message' required ></textarea>
             <button type='submit' className='btn dark-btn'>Submit now <img src={whiteArr} alt="" /></button>

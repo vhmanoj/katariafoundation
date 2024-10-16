@@ -1,0 +1,55 @@
+.wa-btn {
+    position: fixed;
+    top: 500px;
+    right: 10px;
+    background-color: #25D366;
+    color: white;
+    padding: 15px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-size: 16px;
+    z-index: 1000;
+}
+
+.wa-btn:hover {
+    background-color: #20ba5a;
+}
+
+.wa-btn i {
+    margin-right: 8px;
+}
+
+@media (max-width: 1200px) {
+    .wa-btn {
+        position: fixed;
+        top: 1080px;
+        right: 10px;
+        background-color: #25D366;
+        color: white;
+        padding: 15px;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        font-size: 16px;
+        z-index: 1000;
+    }
+}
+@media (max-width: 600px) {
+    .wa-btn {
+        position: fixed;
+        top: 850px;
+        right: 10px;
+        background-color: #25D366;
+        color: white;
+        padding: 15px;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        font-size: 14px;
+        z-index: 1000;
+    }
+}
