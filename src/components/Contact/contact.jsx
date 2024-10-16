@@ -35,15 +35,15 @@ const contact = () => {
       }
     };
 
-    const handlePhoneChange = (e) => {
-      const value = e.target.value;
-      if (value.startsWith('+91')) {
-        const number = value.slice(3).replace(/\D/g, '');
-        if (number.length <= 10) {
-          setPhone(`+91 ${number}`);
-        }
+    function validatePhoneInput(input) {
+      // Remove any non-digit characters
+      input.value = input.value.replace(/\D/g, '');
+  
+      // Limit the input to 10 digits
+      if (input.value.length > 10) {
+          input.value = input.value.slice(0, 10);
       }
-    }
+    }  
 
   return (
     <div className='contact'>
@@ -62,8 +62,18 @@ const contact = () => {
             <label>Your Name</label>
             <input type="text" name='name' placeholder='Enter your name'
             required />
-            <label>Phone Number</label>
-            <input type="tel" name='phone' placeholder='Enter your mobile number' required onChange={handlePhoneChange}/>
+            <label>Phone Number(+91)</label>
+            <div>
+              <input 
+              type="tel" 
+              name='phone' 
+              placeholder='10-digit mobile number' 
+              required 
+              maxLength={10} 
+              onInput={validatePhoneInput}
+              pattern="[0-9]{10}"
+              />
+            </div>
             <label>Write your message here</label>
             <textarea name="message" rows={6} placeholder='Enter your message' required ></textarea>
             <button type='submit' className='btn dark-btn'>Submit now <img src={whiteArr} alt="" /></button>
