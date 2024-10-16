@@ -1,5 +1,5 @@
 import React from 'react'
-import './WAButton.css'
+import './Wabutton.css'
 
 const Wabutton = () => {
   return (
