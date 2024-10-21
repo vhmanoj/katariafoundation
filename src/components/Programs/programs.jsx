@@ -74,9 +74,9 @@ const programs = () => {
         <li>90% or above score in both Class 10 and Class 12.</li>
       </ul>
       <p>Students fulfilling either of these criteria will be considered for tuition fee support.</p>
-      <button className='dark-btn' onClick={handleShow}>Apply Now</button>
+      {/* <button className='dark-btn' onClick={handleShow}>Apply Now</button>
       <button className="my-custom-button" onClick={handleShow}>
-      </button>
+      </button> */}
 
       <Modal
         show={show}
